@@ -3,8 +3,6 @@
 #include <limits>
 #include <algorithm>
 
-
-
 using std::cout, std::cin, std::endl, std::string, std::vector;
 
 class Game {
@@ -158,7 +156,7 @@ int playGame() {                    // no output messages for bots -> faster
     g.init();
     int coup = 0;
     while (g.gameStatus == 0) {
-        coup = g.playMoves();
+        cin >> coup;
         g.apply(coup/3,coup%3);
     }
     return g.gameStatus;

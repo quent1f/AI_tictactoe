@@ -1,5 +1,5 @@
 #include "game.h"
-#include "playerAI.h"
+#include "playerClass.h"
 
 int main() {
     playGameHuman();

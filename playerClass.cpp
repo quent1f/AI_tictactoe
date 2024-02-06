@@ -1,16 +1,23 @@
-#include "playerAI.h"
+#include "playerClass.h"
 
-Player::Player(string name, int player, int maxDepth) {
+/* 2 classes Player : HumanPlayer and AIPlayer */
+
+HumanPlayer::HumanPlayer(string name, int player) {
+    name = name;
+    player = player;
+}
+
+    
+
+
+
+AIPlayer::AIPlayer(string name, int player, int maxDepth) {
     name = name;
     player = player;
     maxDepth = maxDepth;
 }
 
-vector<int> Player::getPossibleMoves(Game g) {
-    return g.getMoves();
-}
-
-float Player::heuristic(Game g) {          // positive value -> favorable position, negative value -> unfavorable position
+float AIPlayer::heuristic(Game &g) {          // positive value -> favorable position, negative value -> unfavorable position
 
     if (g.gameStatus == 0) {
         return 0;               // TODO 
@@ -29,7 +36,7 @@ float Player::heuristic(Game g) {          // positive value -> favorable positi
     return 0; 
 }
 
-float Player::alphabeta(Game g) {
+int AIPlayer::alphabeta(Game &g) {                         // play the better move using alpha-beta pruning
     float best_score = std::numeric_limits<float>::min();
     float beta = std::numeric_limits<float>::max();
     int coup = -1;
@@ -50,7 +57,7 @@ float Player::alphabeta(Game g) {
     return coup;
 }
 
-float Player::minValue(Game g, int depth, float alpha, float beta) {
+float AIPlayer::minValue(Game &g, int depth, float alpha, float beta) {
     if (depth > maxDepth || g.gameStatus != 0) {
         return heuristic(g);
     }
@@ -67,7 +74,7 @@ float Player::minValue(Game g, int depth, float alpha, float beta) {
     return value;
 }
 
-float Player::maxValue(Game g, int depth, float alpha, float beta) {
+float AIPlayer::maxValue(Game &g, int depth, float alpha, float beta) {
     if (depth > maxDepth || g.gameStatus != 0) {
         return heuristic(g);
     }

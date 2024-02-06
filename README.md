@@ -15,9 +15,9 @@ I think this is a good way to begin before starting more ambitious project (ches
 ## Done and TO DO : 
 
 - 02/02 : The game is functional (very basic) 
+- 06/02 : Implemented Classes for players, Alpha-Beta pruning and cleaner files (headers, main...)
 
-- Have to implement a better interface for player and easier test developpement 
-- Starting AI player, thinking about the structure.
-- Making something easy to hide games (printing cost a lot of ressources) and start games 
-- Looking for files gestions for a C++ project (header, imports...) make something clean
+- Complete game interface, Human VS Human, AI vs Human, AI vs AI 
+- Have to look for heuristics
 - Checking if code is efficient and benchmark time execution with a lot of games
+- I have to rethink about structures, efficienty and simplicity 

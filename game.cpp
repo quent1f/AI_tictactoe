@@ -35,6 +35,7 @@ void Game::apply(int i, int j) {       // return 2 for draw, -1 or 1 for the win
     if (grid[i][j] == 0) {     // can play only is the case (i,j) is empty
         grid[i][j] = turn;
         moves++;
+        // cout << "applied move " << i << " " << j << "\n";
         if (moves < 5) {       // useless to check if someone has won before 5 moves played
             turn = -turn;
             return; 
@@ -79,6 +80,9 @@ void Game::apply(int i, int j) {       // return 2 for draw, -1 or 1 for the win
         }
         turn = -turn;  // other player to play next move 
     } 
+    else {
+        cout << "Erreur : position invalise\n";
+    }
 }
 
 void Game::unapply(int i, int j) {
@@ -86,6 +90,7 @@ void Game::unapply(int i, int j) {
     turn = -turn;
     gameStatus = 0; 
     moves--;
+    // cout << "unapplied move " << i << " " << j << "\n";
 }
 
 // to play a move, the grid is divided in 9 cases, a number from 0 to 8 going from top left to bottom right
@@ -116,9 +121,9 @@ int Game::playMoves() {
     return coup;
 }
 
+// We define different functions to play the game : Human vs Human (with graphic interface), Human vs AI, AI vs AI 
 
-
-int playGameHuman() {                // plays a game with graphic interface for Human, return -1 if -1 won, 1 if 1 won and 2 if it's a draw
+int playGameHH(HumanPlayer p1, HumanPlayer p2) {                // plays a game with graphic interface for Human, return -1 if -1 won, 1 if 1 won and 2 if it's a draw
     Game g;
     int coup = 0;
     while (g.gameStatus == 0) {
@@ -146,3 +151,4 @@ int playGame() {                    // no output messages for bots -> faster
     }
     return g.gameStatus;
 }
+

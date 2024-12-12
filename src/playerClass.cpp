@@ -9,7 +9,7 @@ int HumanPlayer::play(Game &g) {
     
 
 int AIPlayer::play(Game &g) {
-    cout << name << "est entrain de réfléchir\n"; 
+    cout << name << " est entrain de réfléchir\n"; 
     return alphabeta(g); 
 }
 

@@ -47,7 +47,7 @@ int main() {
     AIPlayer AI1("AI1", -1, 2);
     AIPlayer AI2("AI2", 1, 2);
 
-    playGameAI(g, AI1, AI2);
+   // playGame(g, AI1, AI2);
     g.printGrid();
     cout << g.turn << " " << g.gameStatus << " " << g.moves << "\n";
 

@@ -3,12 +3,13 @@
 
 int main() {
 
-    // AIPlayer AI1("AI1", -1, 2);
-    // AIPlayer AI2("AI2", 1, 2);
+    AIPlayer AI1("AI1", 1, 2);
+    AIPlayer AI2("AI2", -1, 8);
 
-    HumanPlayer p1("Quentin1", 1);
-    HumanPlayer p2("Quentin2", -1);
-    playGameClass(p1, p2);
+    HumanPlayer p1("Quent1", 1);
+    HumanPlayer p2("Quent2", -1);
+
+    playGameClass(AI1, AI2);
     return 0;
 }
 

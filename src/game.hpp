@@ -1,10 +1,12 @@
-#ifndef GAME_H
-#define GAME_H
+#pragma once
 
 #include <iostream>
 #include <vector>
+#include "playerClass.hpp"
 
 using std::cout, std::cin, std::endl, std::string, std::vector;
+
+class Player; 
 
 class Game {
 public:
@@ -34,5 +36,5 @@ int playGame();
 
 
 
+int playGameClass(Player& p1, Player& p2); 
 
-#endif 

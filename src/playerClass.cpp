@@ -1,21 +1,18 @@
-#include "playerClass.h"
+#include "playerClass.hpp"
 
 /* 2 classes Player : HumanPlayer and AIPlayer */
 
-HumanPlayer::HumanPlayer(string name, int player) {
-    name = name;
-    player = player;
+int HumanPlayer::play(Game &g) {
+    g.printGrid();
+    return g.playMoves();
 }
-
     
 
-
-
-AIPlayer::AIPlayer(string name, int player, int maxDepth) {
-    name = name;
-    player = player;
-    maxDepth = maxDepth;
+int AIPlayer::play(Game &g) {
+    cout << name << "est entrain de réfléchir\n"; 
+    return alphabeta(g); 
 }
+
 
 float AIPlayer::heuristic(Game &g) {          // positive value -> favorable position, negative value -> unfavorable position
 

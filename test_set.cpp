@@ -1,4 +1,4 @@
-#include "playerClass.h"
+#include "src/playerClass.hpp"
 
 // This file provides many differents tests sets in order to test heuristics and alpha-beta evaluations in different positions 
 

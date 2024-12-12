@@ -1,4 +1,5 @@
-#include "game.h" 
+#include "game.hpp" 
+#include "playerClass.hpp"
 
 Game::Game() {    // initialise a game (constructor)
     turn = 1;
@@ -123,7 +124,37 @@ int Game::playMoves() {
 
 // We define different functions to play the game : Human vs Human (with graphic interface), Human vs AI, AI vs AI 
 
-int playGameHH(HumanPlayer p1, HumanPlayer p2) {                // plays a game with graphic interface for Human, return -1 if -1 won, 1 if 1 won and 2 if it's a draw
+// int playGameHH(HumanPlayer p1, HumanPlayer p2) {                // plays a game with graphic interface for Human, return -1 if -1 won, 1 if 1 won and 2 if it's a draw
+//     Game g;
+//     int coup = 0;
+//     while (g.gameStatus == 0) {
+//         g.printGrid();
+//         coup = g.playMoves();
+//         g.apply(coup/3,coup%3);
+//     }
+//     g.printGrid();
+//     if (g.gameStatus != 2) {
+//         cout << g.gameStatus << " a gagné la partie!" << "\n";
+//         return g.gameStatus;
+//     }
+//     else {
+//         cout << "Match nul !" << "\n";
+//         return 2;
+//     }
+// }
+
+int playGame() {                    // no output messages for bots -> faster 
+    Game g;
+    int coup = 0;
+    while (g.gameStatus == 0) {
+        cin >> coup;
+        g.apply(coup/3,coup%3);
+    }
+    return g.gameStatus;
+}
+
+
+int playGameHuman() {                // plays a game with graphic interface for Human, return -1 if -1 won, 1 if 1 won and 2 if it's a draw
     Game g;
     int coup = 0;
     while (g.gameStatus == 0) {
@@ -142,13 +173,24 @@ int playGameHH(HumanPlayer p1, HumanPlayer p2) {                // plays a game 
     }
 }
 
-int playGame() {                    // no output messages for bots -> faster 
-    Game g;
-    int coup = 0;
+int playGameClass(Player& p1, Player& p2) {
+    Game g; 
+    int coup; 
     while (g.gameStatus == 0) {
-        cin >> coup;
-        g.apply(coup/3,coup%3);
+        coup = g.turn == 1 ? p1.play(g) : p2.play(g);
+        g.apply(coup/3, coup%3);
     }
-    return g.gameStatus;
+    g.printGrid(); 
+    switch (g.gameStatus) {
+        case 2: 
+            cout << "Match nul! \n";  
+            break; 
+        case 1: 
+            cout << p1.name << " a gagné la partie! \n"; 
+            break; 
+        case -1: 
+            cout << p2.name << " a gagné la partie! \n"; 
+            break; 
+    }
+    return g.gameStatus; 
 }
-

@@ -3,8 +3,8 @@
 
 int main() {
 
-    AIPlayer AI1("AI1", 1, 2);
-    AIPlayer AI2("AI2", -1, 8);
+    AIPlayer AI1("AI1", 1, 3);
+    AIPlayer AI2("AI2", -1, 5);
 
     HumanPlayer p1("Quent1", 1);
     HumanPlayer p2("Quent2", -1);

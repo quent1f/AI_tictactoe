@@ -82,7 +82,7 @@ void Game::apply(int i, int j) {       // return 2 for draw, -1 or 1 for the win
         turn = -turn;  // other player to play next move 
     } 
     else {
-        cout << "Erreur : position invalise\n";
+        cout << "Erreur : position invalide\n";
     }
 }
 

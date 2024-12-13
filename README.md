@@ -10,7 +10,7 @@ I want to do this small project to improve my C++ coding skills, discovering OOP
 
 - Implement a playable tic tac toe game
 - Code an AI to play against, using minmax, alpha-beta pruning.
-- Test some differents heuristics, add weights, do selection with tournament (like a genetic algorithm)
+- Test some differents heuristics, add weights, do selection with a tournament
 - Benchmarking performances
 
 ## Done and TO DO : 
@@ -19,5 +19,9 @@ I want to do this small project to improve my C++ coding skills, discovering OOP
 - Implemented Classes for players, Alpha-Beta pruning and cleaner files (headers, main...)
 - Complete game interface, Human VS Human, AI vs Human, AI vs AI 
 
-- Have to look for heuristics
+TO DO
+
+- Have to look for different heuristics
+- Making a way to choose my heuristic in class AIPlayer so 2 heuristics can play against 
+- Adding randomness
 - Checking if code is efficient and benchmark time execution with a lot of games

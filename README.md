@@ -1,8 +1,8 @@
-# AI Tic Tac Toe
+# Tic Tac Toe
 
 ## Project idea :
 
-The goal of this project is to implement AI (game theory) techniques for Tic Tac Toe game.
+The goal of this project is to implement game theory techniques for Tic Tac Toe game.
 I want to do this small project to improve my C++ coding skills, discovering OOP in C++.
 
 
